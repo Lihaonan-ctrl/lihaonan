@@ -1,22 +1,22 @@
 //202510306218
 //2229740274@qq.com
 //李浩楠
-#include <stdio.h>
-int main() {
-    int count = 0; 
-    for (int num = 100; num <= 999; num++) {
-        int hundreds = num / 100;
-        int tens = (num / 10) % 10;
-        int units = num % 10;
-        
-        if (hundreds*hundreds*hundreds + tens*tens*tens + units*units*units == num) {
-            if (count > 0) {
-                printf(" "); 
-            }
-            printf("%d", num);
-            count++;
+#include<stdio.h>
+
+int main(){
+    int mat[3][3],trans[3][3];
+
+    for (int i=0;i<3;i++){
+        sanf("%d %d %d",&mat[i][0],&mat[i][1],&mat[i][2]);
+    }
+
+    for (int i=0;i<3;i++){
+        for(int j = 0;j<3;j++){
+            trans[j][i]=mat[i][j];
         }
     }
-    printf("\n");
+    for (int i=0;i<3;i++){
+        printf("%d %d %d\n",trans[i][0],trans[i][1],trans[1][2]);
+    }
     return 0;
 }
