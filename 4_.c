@@ -2,22 +2,20 @@
 //2229740274@qq.com
 //李浩楠
 #include <stdio.h>
-int main() {
-    int num = 100, count = 0;
-    while (num <= 999) {
-        int hundreds = num / 100;
-        int tens = (num / 10) % 10;
-        int units = num % 10;
-        
-        if (hundreds*hundreds*hundreds + tens*tens*tens + units*units*units == num) {
-            if (count > 0) {
-                printf(" ");
-            }
-            printf("%d", num);
-            count++;
-        }
-        num++; 
+
+int power(int a, int b) {
+    int result = 1;
+    for (int i = 0; i < b; i++) {
+        result *= a;
     }
-    printf("\n");
+    return result;
+}
+
+int main(){
+    int sum = 0;
+    for (int i = 1; i <= 5; i++) {
+        sum += power(i, 2);
+    }
+    printf("%d\n", sum);  
     return 0;
 }
